@@ -1,7 +1,8 @@
-package tw.tonyyang.drama
+package tw.tonyyang.drama.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import tw.tonyyang.drama.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Drama</string>
+    <string name="drama_cover_description">影劇封面</string>
+    <string name="drama_total_views_title">觀看次數：%d</string>
+    <string name="drama_created_at_title">建立日期：%s</string>
+    <string name="hint_search_drama">請搜尋劇名</string>
 </resources>
