@@ -32,7 +32,7 @@ class DramaFragment : Fragment() {
     private val dramaItemListener = object : DramaAdapter.OnItemClickListener {
 
         override fun onItemClick(view: View, drama: Drama) {
-            DramaFragmentDirections.actionDramaFragmentToDramaDetailFragment(drama).let {
+            DramaFragmentDirections.actionDramaFragmentToDramaDetailFragment(drama = drama).let {
                 view.findNavController().navigate(it)
             }
         }

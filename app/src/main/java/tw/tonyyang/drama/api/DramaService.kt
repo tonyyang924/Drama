@@ -9,12 +9,16 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import tw.tonyyang.drama.BuildConfig
 import tw.tonyyang.drama.model.DramaResponse
 
 interface DramaService {
     @GET("/drama")
     fun searchDramas(): Observable<DramaResponse>
+
+    @GET("/drama/{id}")
+    fun searchDrama(@Path("id") dramaId: Int): Observable<DramaResponse>
 
     companion object {
         fun getService(context: Context): DramaService {

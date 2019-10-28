@@ -1,6 +1,7 @@
 package tw.tonyyang.drama.db.dao
 
 import androidx.room.*
+import tw.tonyyang.drama.model.DRAMA_ID
 import tw.tonyyang.drama.model.Drama
 import tw.tonyyang.drama.model.TABLE_NAME
 
@@ -27,6 +28,9 @@ interface DramaDao {
     @Query("DELETE FROM $TABLE_NAME")
     fun deleteAll()
 
-    @Query("SELECT * from $TABLE_NAME")
+    @Query("SELECT * FROM $TABLE_NAME WHERE $DRAMA_ID = :dramaId")
+    fun getDrama(dramaId: Int): Drama
+
+    @Query("SELECT * FROM $TABLE_NAME")
     fun getAllDramas(): List<Drama>
 }

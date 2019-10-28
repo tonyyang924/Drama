@@ -18,8 +18,14 @@
         android:name="tw.tonyyang.drama.ui.DramaDetailFragment"
         tools:layout="@layout/fragment_drama_detail">
         <argument
+            android:name="drama_id"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
             android:name="drama"
+            app:nullable="true"
             app:argType="tw.tonyyang.drama.model.Drama" />
+        <deepLink app:uri="app://drama?id={id}" />
     </fragment>
 
 </navigation>
