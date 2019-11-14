@@ -1,6 +1,5 @@
 package tw.tonyyang.drama.ui
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +13,7 @@ import tw.tonyyang.drama.model.Drama
 import java.util.*
 import kotlin.collections.ArrayList
 
-class DramaAdapter(private val context: Context) :
+class DramaAdapter :
     RecyclerView.Adapter<DramaAdapter.ViewHolder>(), Filterable {
 
     interface OnItemClickListener {
@@ -24,10 +23,6 @@ class DramaAdapter(private val context: Context) :
     var listener: OnItemClickListener? = null
 
     private val mLock = Any()
-
-    private val mInflater by lazy {
-        LayoutInflater.from(context)
-    }
 
     var mLastFilterConstraint = ""
 
@@ -57,7 +52,7 @@ class DramaAdapter(private val context: Context) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ViewHolder(mInflater.inflate(R.layout.item_drama, parent, false))
+        ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_drama, parent, false))
 
     override fun getItemCount() = filterList.size
 

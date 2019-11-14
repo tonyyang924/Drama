@@ -24,7 +24,7 @@ class DramaFragment : Fragment() {
     }
 
     private val dramaAdapter by lazy {
-        DramaAdapter(activity as Context).also {
+        DramaAdapter().also {
             it.listener = dramaItemListener
         }
     }
